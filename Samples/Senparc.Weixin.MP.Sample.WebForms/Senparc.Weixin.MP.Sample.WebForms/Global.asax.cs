@@ -139,98 +139,98 @@ namespace Senparc.Weixin.MP.Sample.WebForms
                 //注册多个公众号或小程序（可注册多个）                                        -- DPBMARK MiniProgram
                 .RegisterWxOpenAccount(senparcWeixinSetting, "【盛派网络小助手】小程序")// DPBMARK_END
 
-                //除此以外，仍然可以在程序任意地方注册公众号或小程序：
-                //AccessTokenContainer.Register(appId, appSecret, name);//命名空间：Senparc.Weixin.MP.Containers
+            //除此以外，仍然可以在程序任意地方注册公众号或小程序：
+            //AccessTokenContainer.Register(appId, appSecret, name);//命名空间：Senparc.Weixin.MP.Containers
             #endregion
 
-            #region 注册企业号（按需）           -- DPBMARK Work
+            //#region 注册企业号（按需）           -- DPBMARK Work
 
-                //注册企业微信（可注册多个）
-                .RegisterWorkAccount(senparcWeixinSetting, "【盛派网络】企业微信")
+            //    //注册企业微信（可注册多个）
+            //    .RegisterWorkAccount(senparcWeixinSetting, "【盛派网络】企业微信")
 
-                //除此以外，仍然可以在程序任意地方注册企业微信：
-                //AccessTokenContainer.Register(corpId, corpSecret, name);//命名空间：Senparc.Weixin.Work.Containers
-            #endregion                          // DPBMARK_END
+            //    //除此以外，仍然可以在程序任意地方注册企业微信：
+            //    //AccessTokenContainer.Register(corpId, corpSecret, name);//命名空间：Senparc.Weixin.Work.Containers
+            //#endregion                          // DPBMARK_END
 
-            #region 注册微信支付（按需）        -- DPBMARK TenPay
+            //#region 注册微信支付（按需）        -- DPBMARK TenPay
 
-                //注册旧微信支付版本（V2）（可注册多个）
-                .RegisterTenpayOld(senparcWeixinSetting, "【盛派网络小助手】公众号")//这里的 name 和第一个 RegisterMpAccount() 中的一致，会被记录到同一个 SenparcWeixinSettingItem 对象中
+            //    //注册旧微信支付版本（V2）（可注册多个）
+            //    .RegisterTenpayOld(senparcWeixinSetting, "【盛派网络小助手】公众号")//这里的 name 和第一个 RegisterMpAccount() 中的一致，会被记录到同一个 SenparcWeixinSettingItem 对象中
 
-                //注册最新微信支付版本（V3）（可注册多个）
-                .RegisterTenpayV3(senparcWeixinSetting, "【盛派网络小助手】公众号")//记录到同一个 SenparcWeixinSettingItem 对象中
+            //    //注册最新微信支付版本（V3）（可注册多个）
+            //    .RegisterTenpayV3(senparcWeixinSetting, "【盛派网络小助手】公众号")//记录到同一个 SenparcWeixinSettingItem 对象中
 
-            #endregion                          // DPBMARK_END
+            //#endregion                          // DPBMARK_END
 
-            #region 注册微信第三方平台（按需）  -- DPBMARK Open
+            //#region 注册微信第三方平台（按需）  -- DPBMARK Open
 
-                //注册第三方平台（可注册多个）
-                .RegisterOpenComponent(senparcWeixinSetting,
-                    //getComponentVerifyTicketFunc
-                    componentAppId =>
-                    {
-                        var dir = Path.Combine(Server.MapPath("~/App_Data/OpenTicket"));
-                        if (!Directory.Exists(dir))
-                        {
-                            Directory.CreateDirectory(dir);
-                        }
+            //    //注册第三方平台（可注册多个）
+            //    .RegisterOpenComponent(senparcWeixinSetting,
+            //        //getComponentVerifyTicketFunc
+            //        componentAppId =>
+            //        {
+            //            var dir = Path.Combine(Server.MapPath("~/App_Data/OpenTicket"));
+            //            if (!Directory.Exists(dir))
+            //            {
+            //                Directory.CreateDirectory(dir);
+            //            }
 
-                        var file = Path.Combine(dir, string.Format("{0}.txt", componentAppId));
-                        using (var fs = new FileStream(file, FileMode.Open))
-                        {
-                            using (var sr = new StreamReader(fs))
-                            {
-                                var ticket = sr.ReadToEnd();
-                                return ticket;
-                            }
-                        }
-                    },
+            //            var file = Path.Combine(dir, string.Format("{0}.txt", componentAppId));
+            //            using (var fs = new FileStream(file, FileMode.Open))
+            //            {
+            //                using (var sr = new StreamReader(fs))
+            //                {
+            //                    var ticket = sr.ReadToEnd();
+            //                    return ticket;
+            //                }
+            //            }
+            //        },
 
-                     //getAuthorizerRefreshTokenFunc
-                     (componentAppId, auhtorizerId) =>
-                     {
-                         var dir = Path.Combine(Server.MapPath("~/App_Data/AuthorizerInfo/" + componentAppId));
-                         if (!Directory.Exists(dir))
-                         {
-                             Directory.CreateDirectory(dir);
-                         }
+            //         //getAuthorizerRefreshTokenFunc
+            //         (componentAppId, auhtorizerId) =>
+            //         {
+            //             var dir = Path.Combine(Server.MapPath("~/App_Data/AuthorizerInfo/" + componentAppId));
+            //             if (!Directory.Exists(dir))
+            //             {
+            //                 Directory.CreateDirectory(dir);
+            //             }
 
-                         var file = Path.Combine(dir, string.Format("{0}.bin", auhtorizerId));
-                         if (!File.Exists(file))
-                         {
-                             return null;
-                         }
+            //             var file = Path.Combine(dir, string.Format("{0}.bin", auhtorizerId));
+            //             if (!File.Exists(file))
+            //             {
+            //                 return null;
+            //             }
 
-                         using (Stream fs = new FileStream(file, FileMode.Open))
-                         {
-                             var binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                             var result = (RefreshAuthorizerTokenResult)binFormat.Deserialize(fs);
-                             return result.authorizer_refresh_token;
-                         }
-                     },
+            //             using (Stream fs = new FileStream(file, FileMode.Open))
+            //             {
+            //                 var binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            //                 var result = (RefreshAuthorizerTokenResult)binFormat.Deserialize(fs);
+            //                 return result.authorizer_refresh_token;
+            //             }
+            //         },
 
-                     //authorizerTokenRefreshedFunc
-                     (componentAppId, auhtorizerId, refreshResult) =>
-                     {
-                         var dir = Path.Combine(Server.MapPath("~/App_Data/AuthorizerInfo/" + componentAppId));
-                         if (!Directory.Exists(dir))
-                         {
-                             Directory.CreateDirectory(dir);
-                         }
+            //         //authorizerTokenRefreshedFunc
+            //         (componentAppId, auhtorizerId, refreshResult) =>
+            //         {
+            //             var dir = Path.Combine(Server.MapPath("~/App_Data/AuthorizerInfo/" + componentAppId));
+            //             if (!Directory.Exists(dir))
+            //             {
+            //                 Directory.CreateDirectory(dir);
+            //             }
 
-                         var file = Path.Combine(dir, string.Format("{0}.bin", auhtorizerId));
-                         using (Stream fs = new FileStream(file, FileMode.Create))
-                         {
-                             //这里存了整个对象，实际上只存RefreshToken也可以，有了RefreshToken就能刷新到最新的AccessToken
-                             var binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                             binFormat.Serialize(fs, refreshResult);
-                             fs.Flush();
-                         }
-                     }, "【盛派网络】开放平台")
+            //             var file = Path.Combine(dir, string.Format("{0}.bin", auhtorizerId));
+            //             using (Stream fs = new FileStream(file, FileMode.Create))
+            //             {
+            //                 //这里存了整个对象，实际上只存RefreshToken也可以，有了RefreshToken就能刷新到最新的AccessToken
+            //                 var binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            //                 binFormat.Serialize(fs, refreshResult);
+            //                 fs.Flush();
+            //             }
+            //         }, "【盛派网络】开放平台")
 
-            //除此以外，仍然可以在程序任意地方注册开放平台：
-            //ComponentContainer.Register();//命名空间：Senparc.Weixin.Open.Containers
-            #endregion                          // DPBMARK_END
+            ////除此以外，仍然可以在程序任意地方注册开放平台：
+            ////ComponentContainer.Register();//命名空间：Senparc.Weixin.Open.Containers
+            //#endregion                          // DPBMARK_END
 
             ;
 

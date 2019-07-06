@@ -126,6 +126,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BinaryFormatter">
+      <Version>2.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Senparc.CO2NET">
       <Version>0.8.2</Version>
     </PackageReference>

@@ -98,6 +98,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BinaryFormatter">
+      <Version>2.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Senparc.CO2NET.Cache.Redis">
       <Version>3.5.2</Version>
     </PackageReference>

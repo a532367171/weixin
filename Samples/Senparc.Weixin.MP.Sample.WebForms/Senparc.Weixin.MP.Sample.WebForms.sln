@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.MP.Sample.WebForms", "Senparc.Weixin.MP.Sample.WebForms\Senparc.Weixin.MP.Sample.WebForms.csproj", "{F4913863-687B-44EF-B1A4-655C49A5BCB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.MP.Sample.CommonService", "..\Senparc.Weixin.MP.Sample\Senparc.Weixin.MP.Sample.CommonService\Senparc.Weixin.MP.Sample.CommonService.csproj", "{CCD291E9-16FA-4B53-B032-EBD3F659567B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin", "..\..\src\Senparc.Weixin\Senparc.Weixin\Senparc.Weixin.csproj", "{814092CD-9CD0-4FB7-91E8-D147F476F1FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.MP", "..\..\src\Senparc.Weixin.MP\Senparc.Weixin.MP\Senparc.Weixin.MP.csproj", "{1D815FBF-451C-4E23-939C-CB80172F445C}"
@@ -28,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.WebSocket", "..\..\src\Senparc.WebSocket\src\Senparc.WebSocket\Senparc.WebSocket\Senparc.WebSocket.csproj", "{B745F5F5-9120-4D56-A86D-ED34EADB703C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.TenPay", "..\..\src\Senparc.Weixin.TenPay\Senparc.Weixin.TenPay\Senparc.Weixin.TenPay.csproj", "{DEFC9E7A-F6F0-4E97-AC11-30CF0E6A875C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senparc.Weixin.MP.Sample.CommonService", "Senparc.Weixin.MP.Sample.CommonService\Senparc.Weixin.MP.Sample.CommonService.csproj", "{AA58B251-F4F5-45AD-A98F-62ADD0530B47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,18 +51,6 @@ Global
 		{F4913863-687B-44EF-B1A4-655C49A5BCB7}.Test|Any CPU.Build.0 = Release|Any CPU
 		{F4913863-687B-44EF-B1A4-655C49A5BCB7}.Test|x86.ActiveCfg = Release|Any CPU
 		{F4913863-687B-44EF-B1A4-655C49A5BCB7}.Test|x86.Build.0 = Release|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Debug|x86.ActiveCfg = Debug|x86
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Debug|x86.Build.0 = Debug|x86
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Release|x86.ActiveCfg = Release|x86
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Release|x86.Build.0 = Release|x86
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Test|Any CPU.ActiveCfg = Release|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Test|Any CPU.Build.0 = Release|Any CPU
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Test|x86.ActiveCfg = Release|x86
-		{CCD291E9-16FA-4B53-B032-EBD3F659567B}.Test|x86.Build.0 = Release|x86
 		{814092CD-9CD0-4FB7-91E8-D147F476F1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{814092CD-9CD0-4FB7-91E8-D147F476F1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{814092CD-9CD0-4FB7-91E8-D147F476F1FB}.Debug|x86.ActiveCfg = Debug|x86
@@ -171,6 +159,18 @@ Global
 		{DEFC9E7A-F6F0-4E97-AC11-30CF0E6A875C}.Test|Any CPU.Build.0 = Release|Any CPU
 		{DEFC9E7A-F6F0-4E97-AC11-30CF0E6A875C}.Test|x86.ActiveCfg = Release|x86
 		{DEFC9E7A-F6F0-4E97-AC11-30CF0E6A875C}.Test|x86.Build.0 = Release|x86
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Release|x86.Build.0 = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Test|Any CPU.Build.0 = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Test|x86.ActiveCfg = Release|Any CPU
+		{AA58B251-F4F5-45AD-A98F-62ADD0530B47}.Test|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
